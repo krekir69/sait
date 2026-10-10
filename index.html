@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" Кулинара и фуд-блогера. Фирменные блюда, рецепты, ингредиенты.">
+    <title>Кирилл Кретинин — Кулинар и фуд-блогер</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2 {
+            font-size: 2rem;
+            line-height: 1.3;
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav" aria-label="Основная навигация">
+        <div class="nav-container">
+            <a href="#about" class="nav-logo"> Кирилл кулинар</a>
+            <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false"></button>
+            <ul class="nav-list">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#dishes">Фирменные блюда</a></li>
+                <li><a href="#ingredients">Ингредиенты</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header id="about">
+        <img src="avatar.jpg" alt="кулинар и фуд-блогер в красном кителе"
+             class="avatar" width="200" height="200"
+             style="object-fit: cover;">
+        <h1>Кирилл Кретинин</h1>
+        <p class="subtitle">Кулинар и фуд-блогер</p>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="skills">
+                <h2>Навыки</h2>
+                <ul class="skills-list">
+                    <li>Готовить блинчики-невидимки</li>
+                    <li>Вести фуд-блог в TikTok</li>
+                    <li>Варить пельмени в чайнике</li>
+                    <li>Дегустация блюд</li>
+                </ul>
+            </section>
+            <section id="dishes">
+                <h2>Фирменные блюда</h2>
+                <div class="dishes-container">
+                    <article class="dish-card">
+                        <figure class="dish-figure">
+                            <img src="pancakes.jpg"
+                                 alt="Блинчики-невидимки на тарелке"
+                                 class="dish-img" width="400" height="300">
+                        </figure>
+                        <h3 class="dish-title">Блинчики-невидимки</h3>
+                        <p class="dish-desc">Секретный рецепт, который покорит ваше сердце и желудок.</p>
+                        <dl class="dish-info">
+                            <dt>Время приготовления</dt>
+                            <dd><time datetime="PT30M">30 минут</time></dd>
+                            <dt>Калорийность</dt>
+                            <dd><data value="220">220 ккал</data></dd>
+                        </dl>
+                    </article>
+
+                    <article class="dish-card">
+                        <figure class="dish-figure">
+                            <img src="pasta.jpg"
+                                 alt="Вселенская паста из доширака в миске"
+                                 class="dish-img" width="400" height="300">
+                        </figure>
+                        <h3 class="dish-title">Вселенская паста из доширака</h3>
+                        <p class="dish-desc">Доширак, возведённый в абсолют кулинарного искусства. Быстро, сытно и гениально.</p>
+                        <dl class="dish-info">
+                            <dt>Время приготовления</dt>
+                            <dd><time datetime="PT5M">7 минут</time></dd>
+                            <dt>Калорийность</dt>
+                            <dd><data value="380">380 ккал</data></dd>
+                        </dl>
+                    </article>
+
+                    <article class="dish-card">
+                        <figure class="dish-figure">
+                            <img src="dumplings.jpg"
+                                 alt="Пельмени в чайнике"
+                                 class="dish-img" width="400" height="300">
+                        </figure>
+                        <h3 class="dish-title">Пельмени в чайнике</h3>
+                        <p class="dish-desc">Лайфхак для студентов. Идеальная варка без лишних кастрюль и грязной посуды.</p>
+                        <dl class="dish-info">
+                            <dt>Время приготовления</dt>
+                            <dd><time datetime="PT10M">10 минут</time></dd>
+                            <dt>Калорийность</dt>
+                            <dd><data value="450">450 ккал</data></dd>
+                        </dl>
+                    </article>
+
+                    <article class="dish-card">
+                        <figure class="dish-figure">
+                            <img src="Eggsoup.jpg"
+                                 alt="Суп с яичком в белой тарелке"
+                                 class="dish-img" width="400" height="300">
+                        </figure>
+                        <h3 class="dish-title">Суп с яичком</h3>
+                        <p class="dish-desc">Классика, которая согревает в любую погоду.</p>
+                        <dl class="dish-info">
+                            <dt>Время приготовления</dt>
+                            <dd><time datetime="PT20M">20 минут</time></dd>
+                            <dt>Калорийность</dt>
+                            <dd><data value="180">180 ккал</data></dd>
+                        </dl>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="ingredients">
+                <h2>Ингредиенты недели</h2>
+                <div class="ingredients-grid">
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="eggs.jpg"
+                                 alt="Куриные яйца на сене"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Яичко</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">С ним даже вчерашние макароны вкуснее. Источник белка и витаминов.</p>
+                    </article>
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="flour.jpg"
+                                 alt="Мука в деревянной миске с ложкой"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Мука</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">Основа любого теста. Пшеничная высшего сорта — залог пышных блинчиков.</p>
+                    </article>
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="green.jpg"
+                                 alt="Свежая зелень: петрушка, укроп, лук, салат"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Зелень</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">Петрушка, укроп, кинза — придают блюду свежесть и аромат.</p>
+                    </article>
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="spices.jpg"
+                                 alt="Специи и приправы в мисочках"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Специи</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">Паприка, куркума, чёрный перец — превращают обычное блюдо в шедевр.</p>
+                    </article>
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="butter.jpg"
+                                 alt="Сливочное масло на дощечке"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Масло сливочное</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">82,5% жирности — для идеальной каши и золотистой корочки.</p>
+                    </article>
+
+                    <article class="ingredient-card">
+                        <figure class="ingredient-figure">
+                            <img src="tomat-cherri.jpg"
+                                 alt="Свежие томаты черри на ветке"
+                                 class="ingredient-img" width="300" height="200">
+                            <figcaption>Томаты черри</figcaption>
+                        </figure>
+                        <p class="ingredient-benefit">Сладкие и сочные — идеальны для салатов, пасты и закусок.</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="projects" class="projects">
+                <h2>Рецепты в моём блоге</h2>
+                <div class="cards-container">
+                    <article class="card">
+                        <h3>Блинчики-невидимки</h3>
+                        <p>Секретный рецепт, который покорит ваше сердце и желудок.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Вселенская паста из доширака</h3>
+                        <p>Доширак, возведённый в абсолют кулинарного искусства. Быстро, сытно и гениально.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Пельмени в чайнике</h3>
+                        <p>Лайфхак для студентов. Идеальная варка без лишних кастрюль и грязной посуды.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Суп с яичком</h3>
+                        <p>Классика, которая согревает в любую погоду.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Связаться со мной</h2>
+                <form class="contact-form" action="#" method="post">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message" placeholder="Напишите мне..." required></textarea>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </section>
+
+        </main>
+
+        <aside class="sidebar">
+            <h2>Любимый ингредиент</h2>
+            <p><strong>Яичко</strong> — с ним даже вчерашние макароны вкуснее.</p>
+            <hr>
+            <h2>Популярные теги</h2>
+            <ul class="tags-list">
+                <li><a href="#">#блинчики</a></li>
+                <li><a href="#">#доширак</a></li>
+                <li><a href="#">#пельмени</a></li>
+                <li><a href="#">#студенческаякухня</a></li>
+                <li><a href="#">#фудблог</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026.</p>
+        <p>
+            <a href="#about">Наверх</a> |
+            <a href="#contact">Написать</a>
+        </p>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !expanded);
+            navList.classList.toggle('active');
+        });
+
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+</body>
+</html>
