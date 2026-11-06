@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Кулинара и фуд-блогера. Фирменные блюда, рецепты, ингредиенты.">
+    <meta name="description" content="Кулинар и фуд-блогер: фирменные блюда, рецепты и ингредиенты.">
     <title>Кирилл Кретинин — Кулинар и фуд-блогер</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -17,27 +17,148 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        body.theme-dark {
+            --main-color: #1c211f;
+            --card-color: #29312d;
+            --accent-color: #f08a63;
+            --accent-dark: #d96d4b;
+            --text-color: #f1eee8;
+            --focus-color: #ffd166;
+            --nav-bg: #252d29;
+            --nav-text: #ffffff;
+        }
+
+        body.theme-dark .dish-card,
+        body.theme-dark .ingredient-card,
+        body.theme-dark .card,
+        body.theme-dark .sidebar {
+            background-color: var(--card-color);
+            border-color: rgba(240, 138, 99, 0.35);
+        }
+
+        body.theme-dark .dish-info {
+            background-color: rgba(240, 138, 99, 0.12);
+        }
+
+        body.theme-dark .contact-form input,
+        body.theme-dark .contact-form textarea {
+            background-color: #202723;
+            color: var(--text-color);
+            border-color: #59635d;
+        }
+
+        .recipe-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .recipe-controls button {
+            align-self: auto;
+        }
+
+        .recipe-controls .button-secondary {
+            color: var(--text-color);
+            background-color: var(--card-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .recipe-controls .button-secondary:hover {
+            color: #ffffff;
+            background-color: var(--accent-dark);
+        }
+
+        .recipe-status {
+            min-height: 1.5em;
+            margin: 0 0 16px;
+            color: var(--text-color);
+            opacity: 0.82;
+            font-size: 0.92rem;
+        }
+
+        .recipe-list-wrapper {
+            transition: opacity 0.2s ease;
+        }
+
+        .recipe-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .recipe-card h4 {
+            margin: 14px 0 6px;
+            color: var(--accent-dark);
+        }
+
+        .recipe-card p {
+            margin: 0;
+        }
+
+        .recipe-ingredients {
+            margin: 0 0 18px;
+            padding-left: 21px;
+        }
+
+        .recipe-ingredients li {
+            margin-bottom: 4px;
+        }
+
+        .recipe-delete-button {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .empty-message {
+            grid-column: 1 / -1;
+            padding: 24px;
+            border: 1px dashed var(--accent-color);
+            border-radius: 12px;
+            text-align: center;
+            opacity: 0.85;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .recipe-controls {
+                align-items: stretch;
+            }
+
+            .recipe-controls button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="theme-light">
     <nav class="main-nav" aria-label="Основная навигация">
         <div class="nav-container">
-            <a href="#about" class="nav-logo"> Кирилл кулинар</a>
+            <a href="#about" class="nav-logo">Кирилл кулинар</a>
             <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false"></button>
             <ul class="nav-list">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#skills">Навыки</a></li>
                 <li><a href="#dishes">Фирменные блюда</a></li>
                 <li><a href="#ingredients">Ингредиенты</a></li>
-                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#projects">Рецепты</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
         </div>
     </nav>
+
     <header id="about">
-        <img src="avatar.jpg" alt="кулинар и фуд-блогер в красном кителе"
-             class="avatar" width="200" height="200"
-             style="object-fit: cover;">
+        <img src="images/avatar.jpg" alt="Кулинар и фуд-блогер в красном кителе"
+             class="avatar" width="200" height="200" style="object-fit: cover;">
         <h1>Кирилл Кретинин</h1>
         <p class="subtitle">Кулинар и фуд-блогер</p>
     </header>
@@ -53,13 +174,13 @@
                     <li>Дегустация блюд</li>
                 </ul>
             </section>
+
             <section id="dishes">
                 <h2>Фирменные блюда</h2>
                 <div class="dishes-container">
                     <article class="dish-card">
                         <figure class="dish-figure">
-                            <img src="pancakes.jpg"
-                                 alt="Блинчики-невидимки на тарелке"
+                            <img src="images/pancakes.jpg" alt="Блинчики-невидимки на тарелке"
                                  class="dish-img" width="400" height="300">
                         </figure>
                         <h3 class="dish-title">Блинчики-невидимки</h3>
@@ -71,11 +192,9 @@
                             <dd><data value="220">220 ккал</data></dd>
                         </dl>
                     </article>
-
                     <article class="dish-card">
                         <figure class="dish-figure">
-                            <img src="pasta.jpg"
-                                 alt="Вселенская паста из доширака в миске"
+                            <img src="images/pasta.jpg" alt="Вселенская паста из доширака в миске"
                                  class="dish-img" width="400" height="300">
                         </figure>
                         <h3 class="dish-title">Вселенская паста из доширака</h3>
@@ -87,11 +206,9 @@
                             <dd><data value="380">380 ккал</data></dd>
                         </dl>
                     </article>
-
                     <article class="dish-card">
                         <figure class="dish-figure">
-                            <img src="dumplings.jpg"
-                                 alt="Пельмени в чайнике"
+                            <img src="images/dumplings.jpg" alt="Пельмени в чайнике"
                                  class="dish-img" width="400" height="300">
                         </figure>
                         <h3 class="dish-title">Пельмени в чайнике</h3>
@@ -103,11 +220,9 @@
                             <dd><data value="450">450 ккал</data></dd>
                         </dl>
                     </article>
-
                     <article class="dish-card">
                         <figure class="dish-figure">
-                            <img src="Eggsoup.jpg"
-                                 alt="Суп с яичком в белой тарелке"
+                            <img src="images/Eggsoup.jpg" alt="Суп с яичком в белой тарелке"
                                  class="dish-img" width="400" height="300">
                         </figure>
                         <h3 class="dish-title">Суп с яичком</h3>
@@ -119,96 +234,111 @@
                             <dd><data value="180">180 ккал</data></dd>
                         </dl>
                     </article>
-
                 </div>
             </section>
 
             <section id="ingredients">
                 <h2>Ингредиенты недели</h2>
                 <div class="ingredients-grid">
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="eggs.jpg"
-                                 alt="Куриные яйца на сене"
+                            <img src="images/eggs.jpg" alt="Куриные яйца на сене"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Яичко</figcaption>
                         </figure>
                         <p class="ingredient-benefit">С ним даже вчерашние макароны вкуснее. Источник белка и витаминов.</p>
                     </article>
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="flour.jpg"
-                                 alt="Мука в деревянной миске с ложкой"
+                            <img src="images/flour.jpg" alt="Мука в деревянной миске с ложкой"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Мука</figcaption>
                         </figure>
                         <p class="ingredient-benefit">Основа любого теста. Пшеничная высшего сорта — залог пышных блинчиков.</p>
                     </article>
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="green.jpg"
-                                 alt="Свежая зелень: петрушка, укроп, лук, салат"
+                            <img src="images/green.jpg" alt="Свежая зелень: петрушка, укроп, лук, салат"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Зелень</figcaption>
                         </figure>
                         <p class="ingredient-benefit">Петрушка, укроп, кинза — придают блюду свежесть и аромат.</p>
                     </article>
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="spices.jpg"
-                                 alt="Специи и приправы в мисочках"
+                            <img src="images/spices.jpg" alt="Специи и приправы в мисочках"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Специи</figcaption>
                         </figure>
                         <p class="ingredient-benefit">Паприка, куркума, чёрный перец — превращают обычное блюдо в шедевр.</p>
                     </article>
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="butter.jpg"
-                                 alt="Сливочное масло на дощечке"
+                            <img src="images/butter.jpg" alt="Сливочное масло на дощечке"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Масло сливочное</figcaption>
                         </figure>
                         <p class="ingredient-benefit">82,5% жирности — для идеальной каши и золотистой корочки.</p>
                     </article>
-
                     <article class="ingredient-card">
                         <figure class="ingredient-figure">
-                            <img src="tomat-cherri.jpg"
-                                 alt="Свежие томаты черри на ветке"
+                            <img src="images/tomat-cherri.jpg" alt="Свежие томаты черри на ветке"
                                  class="ingredient-img" width="300" height="200">
                             <figcaption>Томаты черри</figcaption>
                         </figure>
                         <p class="ingredient-benefit">Сладкие и сочные — идеальны для салатов, пасты и закусок.</p>
                     </article>
-
                 </div>
             </section>
 
             <section id="projects" class="projects">
                 <h2>Рецепты в моём блоге</h2>
-                <div class="cards-container">
-                    <article class="card">
-                        <h3>Блинчики-невидимки</h3>
-                        <p>Секретный рецепт, который покорит ваше сердце и желудок.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Вселенская паста из доширака</h3>
-                        <p>Доширак, возведённый в абсолют кулинарного искусства. Быстро, сытно и гениально.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Пельмени в чайнике</h3>
-                        <p>Лайфхак для студентов. Идеальная варка без лишних кастрюль и грязной посуды.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Суп с яичком</h3>
-                        <p>Классика, которая согревает в любую погоду.</p>
-                    </article>
+                <div class="recipe-controls" aria-label="Управление рецептами">
+                    <button type="button" id="addRecipeButton">Добавить рецепт</button>
+                    <button type="button" id="removeLastRecipeButton" class="button-secondary">Удалить последний</button>
+                    <button type="button" id="toggleRecipesButton" class="button-secondary"
+                            aria-expanded="true">Скрыть рецепты</button>
+                    <button type="button" id="toggleThemeButton" class="button-secondary"
+                            aria-pressed="false">Включить тёмную тему</button>
+                </div>
+                <p id="recipeStatus" class="recipe-status" role="status" aria-live="polite">
+                    Рецепты можно добавлять, удалять и сохранять в браузере.
+                </p>
+                <div id="recipeListWrapper" class="recipe-list-wrapper">
+                    <div id="recipeContainer" class="cards-container">
+                        <article class="card recipe-card">
+                            <h3>Блинчики-невидимки</h3>
+                            <p>Секретный рецепт, который покорит ваше сердце и желудок.</p>
+                            <h4>Ингредиенты</h4>
+                            <ul class="recipe-ingredients">
+                                <li>Мука</li><li>Молоко</li><li>Яйца</li><li>Сахар</li><li>Щепотка соли</li>
+                            </ul>
+                        </article>
+                        <article class="card recipe-card">
+                            <h3>Вселенская паста из доширака</h3>
+                            <p>Доширак, возведённый в абсолют кулинарного искусства.</p>
+                            <h4>Ингредиенты</h4>
+                            <ul class="recipe-ingredients">
+                                <li>Лапша быстрого приготовления</li><li>Вода</li><li>Сыр</li><li>Зелень</li>
+                            </ul>
+                        </article>
+                        <article class="card recipe-card">
+                            <h3>Пельмени в чайнике</h3>
+                            <p>Лайфхак для студентов и любителей простых рецептов.</p>
+                            <h4>Ингредиенты</h4>
+                            <ul class="recipe-ingredients">
+                                <li>Пельмени</li><li>Вода</li><li>Лавровый лист</li><li>Соль</li>
+                            </ul>
+                        </article>
+                        <article class="card recipe-card">
+                            <h3>Суп с яичком</h3>
+                            <p>Классика, которая согревает в любую погоду.</p>
+                            <h4>Ингредиенты</h4>
+                            <ul class="recipe-ingredients">
+                                <li>Вода или бульон</li><li>Яйцо</li><li>Зелень</li><li>Соль и перец</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
             </section>
 
@@ -217,17 +347,13 @@
                 <form class="contact-form" action="#" method="post">
                     <label for="name">Имя:</label>
                     <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="your@email.com" required>
-
                     <label for="message">Сообщение:</label>
                     <textarea id="message" name="message" placeholder="Напишите мне..." required></textarea>
-
                     <button type="submit">Отправить</button>
                 </form>
             </section>
-
         </main>
 
         <aside class="sidebar">
@@ -236,40 +362,19 @@
             <hr>
             <h2>Популярные теги</h2>
             <ul class="tags-list">
-                <li><a href="#">#блинчики</a></li>
-                <li><a href="#">#доширак</a></li>
-                <li><a href="#">#пельмени</a></li>
-                <li><a href="#">#студенческаякухня</a></li>
-                <li><a href="#">#фудблог</a></li>
+                <li><a href="#projects">#блинчики</a></li>
+                <li><a href="#projects">#доширак</a></li>
+                <li><a href="#projects">#пельмени</a></li>
+                <li><a href="#projects">#студенческаякухня</a></li>
+                <li><a href="#projects">#фудблог</a></li>
             </ul>
         </aside>
     </div>
 
     <footer>
         <p>&copy; 2026.</p>
-        <p>
-            <a href="#about">Наверх</a> |
-            <a href="#contact">Написать</a>
-        </p>
+        <p><a href="#about">Наверх</a> | <a href="#contact">Написать</a></p>
     </footer>
-
-    <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navList = document.querySelector('.nav-list');
-
-        navToggle.addEventListener('click', () => {
-            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !expanded);
-            navList.classList.toggle('active');
-        });
-
-        navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
